@@ -9,6 +9,18 @@ body {
 	background-image: url(images/bg1.jpg);
 	background-size: cover;
 	background-position: center;
+	background-repeat: no-repeat;
+}
+
+img {
+	width: 40px;
+	background: transparent;
+}
+
+button {
+	background: transparent;
+	border: none;
+	cursor: pointer;
 }
 
 .container {
@@ -21,6 +33,7 @@ body {
 .wrapper {
 	min-height: 40vh;
 	min-width: 40vw;
+	max-height: 100vh;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -28,7 +41,7 @@ body {
 	row-gap: 10px;
 }
 
-.button {
+.noimg-button {
 	font-family: 'Josefin Sans', sans-serif;
 	height: 50px;
 	width: 150px;
@@ -38,11 +51,6 @@ body {
 	cursor: pointer;
 	color: white;
 	transition: background-color 0.4s, color 0.4s;
-}
-
-.button:hover {
-	background-color: white;
-	color: black;
 }
 
 .wrapper__pomodoro-buttons {
@@ -56,10 +64,50 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	font-size: 15vh;
+	font-size: 156px;
 	color: white;
 }
 
 .time__minutes::after {
 	content: ':';
+}
+
+.wrapper__clock-actions {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	column-gap: 10px;
+}
+
+.clock-actions__start {
+	background-color: white;
+	color: #742b66;
+}
+
+.clock-actions__settings {
+	background-color: transparent;
+}
+
+@media (hover: hover) {
+	.noimg-button:hover {
+		background-color: white;
+		color: #742b66;
+	}
+
+	.clock-actions__start:hover {
+		background-color: transparent;
+		color: white;
+	}
+}
+
+@media (max-width: 460px) {
+	.wrapper__pomodoro-buttons {
+		flex-direction: column;
+		row-gap: 10px;
+		align-items: center;
+	}
+
+	.wrapper__time {
+		font-size: 130px;
+	}
 }
