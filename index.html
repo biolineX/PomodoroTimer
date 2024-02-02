@@ -3,19 +3,13 @@
 	<head>
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link
-			href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&display=swap"
-			rel="stylesheet"
-		/>
+		<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&display=swap" rel="stylesheet" />
 		<meta charset="UTF-8" />
-		<meta
-			name="viewport"
-			content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, manimum-scale=1.0"
-		/>
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, manimum-scale=1.0" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" href="normalize.css" />
-		<link rel="stylesheet" href="styles.css" />
+		<link rel="stylesheet" href="css/normalize.css" />
+		<link rel="stylesheet" href="css/styles.css" />
 		<title>Pomodoro V2</title>
 	</head>
 
@@ -23,15 +17,9 @@
 		<div class="container">
 			<div class="wrapper">
 				<div class="wrapper__pomodoro-buttons">
-					<button class="pomodoro-buttons__pomodoro noimg-button">
-						pomodoro
-					</button>
-					<button class="pomodoro-buttons__short-break noimg-button">
-						short break
-					</button>
-					<button class="pomodoro-buttons__long-break noimg-button">
-						long break
-					</button>
+					<button class="pomodoro-buttons__pomodoro noimg-button">pomodoro</button>
+					<button class="pomodoro-buttons__short-break noimg-button">short break</button>
+					<button class="pomodoro-buttons__long-break noimg-button">long break</button>
 				</div>
 
 				<div class="wrapper__time">
@@ -40,15 +28,17 @@
 				</div>
 
 				<div class="wrapper__clock-actions">
-					<button class="clock-actions__start noimg-button">start</button>
-					<button class="clock-actions__refresh ">
+					<button class="clock-actions__start noimg-button pause">start</button>
+					<button class="clock-actions__refresh">
 						<img src="icons/refresh.png" alt="" />
 					</button>
-					<button class="clock-actions__settings ">
+					<button class="clock-actions__settings">
 						<img src="icons/settings.png" alt="settings" />
 					</button>
 				</div>
 			</div>
 		</div>
+
+		<script type="module" src="script.js"></script>
 	</body>
 </html>
