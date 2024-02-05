@@ -68,10 +68,6 @@ button {
 	color: white;
 }
 
-.time__minutes::after {
-	content: ':';
-}
-
 .wrapper__clock-actions {
 	display: flex;
 	justify-content: center;
@@ -81,11 +77,16 @@ button {
 
 .clock-actions__start {
 	background-color: white;
+	font-size: 30px;
 	color: #742b66;
 }
 
 .clock-actions__settings {
 	background-color: transparent;
+}
+
+.none {
+	display: none;
 }
 
 /* для JS слушателей */
@@ -98,7 +99,6 @@ button {
 	background-color: transparent;
 	color: white;
 }
-
 /* для JS слушателей */
 
 /* чтобы hover не работал на телефоне */
@@ -120,5 +120,11 @@ button {
 		flex-direction: column;
 		row-gap: 10px;
 		align-items: center;
+	}
+}
+
+@media (max-width: 360px) {
+	.wrapper__time {
+		font-size: 120px;
 	}
 }

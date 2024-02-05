@@ -1,9 +1,3 @@
-function start() {
-	addEventListeners()
-}
+import {buttonsModule} from './modules/buttons.js'
 
-function Pomodoro() {
-	start()
-}
-
-Pomodoro()
+buttonsModule.init()
