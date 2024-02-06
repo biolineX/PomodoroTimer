@@ -8,17 +8,19 @@ const timerModule = (function () {
 	let timer
 	let seconds
 	let totalSeconds = 0
+	let stopTime
 	const timeElement = document.querySelector('.time__timer')
 
 	let shortBreaksAmount = 0
 
-	function startTimer(minutes) {
-		totalSeconds = minutes * 60
-		seconds = minutes * 60
-		timer = setInterval(updateTimer, 1000)
+	function startTimer(secondsParam) {
+		totalSeconds = secondsParam
+		seconds = secondsParam
+		timer = setInterval(updateTimer, 10)
 	}
 
 	function stopTimer() {
+		stopTime = totalSeconds
 		clearInterval(timer)
 	}
 
@@ -41,8 +43,8 @@ const timerModule = (function () {
 		}
 	}
 
-	function resetTimerDisplay(minutes) {
-		timeElement.textContent = minutes + ':00'
+	function resetTimerDisplay(seconds) {
+		timeElement.textContent = seconds / 60 + ':00'
 	}
 
 	function formatTime(value) {
@@ -77,10 +79,15 @@ const timerModule = (function () {
 		}
 	}
 
+	function getStopTime() {
+		return stopTime
+	}
+
 	return {
 		startTimer,
 		stopTimer,
 		resetTimerDisplay,
+		getStopTime,
 	}
 })()
 

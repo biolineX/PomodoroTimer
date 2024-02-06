@@ -12,8 +12,10 @@ const buttonsModule = (function () {
 
 	const timeElement = document.querySelector('time__timer')
 
+	let timeForReset
 	let previousFocused = null
-	let minutes = 30
+	let seconds = 1800
+	let isRunning
 
 	function init() {
 		pomodoroBtn.addEventListener('click', handlePomodoroClick)
@@ -28,48 +30,61 @@ const buttonsModule = (function () {
 	function handlePomodoroClick() {
 		if (previousFocused != this) {
 			let pomodoroDuration = settingsModule.getPomodoroDuration()
-
-			changeStyleBack(previousFocused)
+			changeStyle(previousFocused)
 			previousFocused = this
 			timerModule.stopTimer()
 			timerModule.resetTimerDisplay(pomodoroDuration)
 			changeStyle(pomodoroBtn)
-			minutes = pomodoroDuration // minutes использовать в кнопке старт
+			seconds = pomodoroDuration // minutes использовать в кнопке старт
+			refreshStart()
+			timeForReset = pomodoroDuration
 		}
 	}
 
 	function handleShortBreakClick() {
 		if (previousFocused != this) {
 			let shortBreakDuration = settingsModule.getShortBreakDuration()
-
-			changeStyleBack(previousFocused)
+			changeStyle(previousFocused)
 			previousFocused = this
 			timerModule.stopTimer()
 			timerModule.resetTimerDisplay(shortBreakDuration)
 			changeStyle(shortBreakBtn)
-			minutes = shortBreakDuration
+			seconds = shortBreakDuration
+			refreshStart()
+			timeForReset = shortBreakDuration
 		}
 	}
 
 	function handleLongBreakClick() {
 		if (previousFocused != this) {
 			let longBreakDuration = settingsModule.getLongBreakDuration()
-
-			changeStyleBack(previousFocused)
+			changeStyle(previousFocused)
 			previousFocused = this
 			timerModule.stopTimer()
 			timerModule.resetTimerDisplay(longBreakDuration)
 			changeStyle(longBreakBtn)
-			minutes = longBreakDuration
+			seconds = longBreakDuration
+			refreshStart()
+			timeForReset = longBreakDuration
 		}
 	}
 
 	function handleStartClick() {
-		// Реализуй функцию для обработки события при нажатии на кнопку "Старт"
+		changeStartStyle()
+		if (!isRunning) {
+			isRunning = true
+			timerModule.startTimer(seconds)
+		} else {
+			isRunning = false
+			timerModule.stopTimer()
+			seconds = timerModule.getStopTime()
+		}
 	}
 
 	function handleResetClick() {
-		
+		refreshStart()
+		timerModule.stopTimer()
+		timerModule.resetTimerDisplay(timeForReset)
 	}
 
 	function handleSettingsClick() {
@@ -86,6 +101,19 @@ const buttonsModule = (function () {
 		if (btn != null) {
 			btn.classList.toggle('clicked')
 		}
+	}
+
+	function changeStartStyle() {
+		if (startBtn.textContent == 'start') {
+			startBtn.textContent = 'pause'
+		} else {
+			startBtn.textContent = 'start'
+		}
+	}
+
+	function refreshStart() {
+		isRunning = false
+		startBtn.textContent = 'start'
 	}
 
 	return {

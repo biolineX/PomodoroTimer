@@ -81,6 +81,7 @@ button {
 	color: #742b66;
 }
 
+
 .clock-actions__settings {
 	background-color: transparent;
 }
@@ -115,7 +116,7 @@ button {
 }
 
 /* мини адаптив */
-@media (max-width: 460px) {
+@media (max-width: 500px) {
 	.wrapper__pomodoro-buttons {
 		flex-direction: column;
 		row-gap: 10px;

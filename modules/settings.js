@@ -1,7 +1,7 @@
 const settingsModule = (function () {
-	let pomodoroDuration = 30
-	let shortBreakDuration = 5
-	let longBreakDuration = 10
+	let pomodoroDuration = 1800
+	let shortBreakDuration = 300
+	let longBreakDuration = 600
 
 	function getPomodoroDuration() {
 		return pomodoroDuration

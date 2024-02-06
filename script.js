@@ -1,3 +1,3 @@
-import {buttonsModule} from './modules/buttons.js'
+import { buttonsModule } from './modules/buttons.js'
 
 buttonsModule.init()
