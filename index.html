@@ -3,23 +3,22 @@
 	<head>
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&display=swap" rel="stylesheet" />
+		<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500&display=swap" rel="stylesheet" />
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, manimum-scale=1.0" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="css/normalize.css" />
 		<link rel="stylesheet" href="css/styles.css" />
-		<title>Pomodoro V2</title>
+		<title>Pomodoro</title>
 	</head>
 
 	<body>
 		<div class="container">
 			<div class="wrapper">
 				<div class="wrapper__pomodoro-buttons">
-					<button class="pomodoro-buttons__pomodoro noimg-button">pomodoro</button>
-					<button class="pomodoro-buttons__short-break noimg-button">short break</button>
-					<button class="pomodoro-buttons__long-break noimg-button">long break</button>
+					<button type="button" class="pomodoro-buttons__pomodoro noimg-button clicked">pomodoro</button>
+					<button type="button" class="pomodoro-buttons__short-break noimg-button">short break</button>
+					<button type="button" class="pomodoro-buttons__long-break noimg-button">long break</button>
 				</div>
 
 				<div class="wrapper__time">
@@ -27,18 +26,84 @@
 				</div>
 
 				<div class="wrapper__clock-actions">
-					<button class="clock-actions__start noimg-button">start</button>
-					<button class="clock-actions__refresh">
+					<button type="button" class="clock-actions__start noimg-button">start</button>
+					<button type="button" class="clock-actions__refresh">
 						<img src="icons/refresh.png" alt="" />
 					</button>
-					<button class="clock-actions__settings">
+					<button type="button" class="clock-actions__settings">
 						<img src="icons/settings.png" alt="settings" />
 					</button>
 				</div>
 			</div>
 		</div>
 
-		<div class="modal none"></div>
+		<div class="modal">
+			<div class="modal__header">
+				<h1 class="modal__title">Timer Settings</h1>
+				<button class="modal_close-button">
+					<svg
+						height="32px"
+						width="32px"
+						id="Layer_1"
+						style="enable-background: new 0 0 512 512"
+						version="1.1"
+						viewBox="0 0 512 512"
+						xml:space="preserve"
+						fill="white"
+					>
+						<path
+							d="M443.6,387.1L312.4,255.4l131.5-130c5.4-5.4,5.4-14.2,0-19.6l-37.4-37.6c-2.6-2.6-6.1-4-9.8-4c-3.7,0-7.2,1.5-9.8,4  L256,197.8L124.9,68.3c-2.6-2.6-6.1-4-9.8-4c-3.7,0-7.2,1.5-9.8,4L68,105.9c-5.4,5.4-5.4,14.2,0,19.6l131.5,130L68.4,387.1  c-2.6,2.6-4.1,6.1-4.1,9.8c0,3.7,1.4,7.2,4.1,9.8l37.4,37.6c2.7,2.7,6.2,4.1,9.8,4.1c3.5,0,7.1-1.3,9.8-4.1L256,313.1l130.7,131.1  c2.7,2.7,6.2,4.1,9.8,4.1c3.5,0,7.1-1.3,9.8-4.1l37.4-37.6c2.6-2.6,4.1-6.1,4.1-9.8C447.7,393.2,446.2,389.7,443.6,387.1z"
+						/>
+					</svg>
+				</button>
+			</div>
+			<div class="modal__wrapper">
+				<div class="wrapper__pomodoro-settings">
+					<h2 class="pomodoro-settings__title">Pomodoro</h2>
+
+					<div class="pomodoro-settings input-container">
+						<input class="pomodoro-input" type="text" value="30" />
+						<button type="button" class="input-container__btn-increment pomodoro-increment">▲</button>
+						<button type="button" class="input-container__btn-decrement pomodoro-decrement">▼</button>
+					</div>
+
+					<h3>minutes</h3>
+				</div>
+
+				<div class="wrapper__short-break-settings">
+					<h2 class="short-break-settings__title">Short Break</h2>
+
+					<div class="short-break-settings input-container">
+						<input class="short-break-input" type="text" value="5" />
+						<button type="button" class="input-container__btn-increment short-break-increment">▲</button>
+						<button type="button" class="input-container__btn-decrement short-break-decrement">▼</button>
+					</div>
+
+					<h3>minutes</h3>
+				</div>
+
+				<div class="wrapper__long-break-settings">
+					<h2 class="long-break-settings__title">Long Break</h2>
+
+					<div class="long-break-settings input-container">
+						<input class="long-break-input" type="text" value="10" />
+						<button type="button" class="input-container__btn-increment long-break-increment">▲</button>
+						<button type="button" class="input-container__btn-decrement long-break-decrement">▼</button>
+					</div>
+
+					<h3>minutes</h3>
+				</div>
+			</div>
+
+			<div class="modal__buttons">
+				<button class="buttons__reset">Reset All</button>
+
+				<div class="buttons__right">
+					<button type="button" class="buttons__close">Close</button>
+					<button type="button" class="buttons__save">Save</button>
+				</div>
+			</div>
+		</div>
 
 		<script type="module" src="script.js"></script>
 	</body>

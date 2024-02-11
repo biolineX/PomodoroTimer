@@ -1,3 +1,5 @@
-import { buttonsModule } from './modules/buttons.js'
+import { mainModule } from './modules/main.js'
+import { modalMadule } from './modules/modal.js'
 
-buttonsModule.init()
+modalMadule.init()
+mainModule.init()
