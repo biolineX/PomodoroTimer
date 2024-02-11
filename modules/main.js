@@ -2,7 +2,8 @@ import { settingsModule } from './settings.js'
 import { timerModule } from './timer.js'
 
 const mainModule = (function () {
-	const modal = document.querySelector('.modal')
+	const mainContainer = document.querySelector('.container')
+	const modalContainer = document.querySelector('.modal__container')
 
 	const pomodoroBtn = document.querySelector('.pomodoro-buttons__pomodoro')
 	const shortBreakBtn = document.querySelector('.pomodoro-buttons__short-break')
@@ -12,9 +13,10 @@ const mainModule = (function () {
 	const refreshBtn = document.querySelector('.clock-actions__refresh')
 	const settingsBtn = document.querySelector('.clock-actions__settings')
 
-	let timeForReset, isRunning
+	let timeForReset = settingsModule.getPomodoroDuration()
+	let isRunning
 	let previousClickedBtn = pomodoroBtn
-	let seconds = 1800
+	let seconds = settingsModule.getPomodoroDuration()
 
 	// Initialization
 	function init() {
@@ -77,7 +79,8 @@ const mainModule = (function () {
 	}
 
 	function handleSettingsClick() {
-		modal.classList.toggle('none')
+		modalContainer.classList.toggle('none')
+		mainContainer.setAttribute('inert', 'inert')
 	}
 
 	// Helper functions
@@ -86,6 +89,7 @@ const mainModule = (function () {
 		changeStyle(previousClickedBtn)
 		previousClickedBtn = btn
 		changeStyle(btn)
+		console.log('style changed')
 	}
 
 	function stopTimeAndResetDisplay(seconds) {

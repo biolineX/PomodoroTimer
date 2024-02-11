@@ -111,21 +111,33 @@ h3 {
 	justify-content: space-between;
 }
 
+.modal__container {
+	width: 100vw;
+	height: 100vh;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-left: -50vw;
+	margin-top: -50vh;
+	background-color: rgba(0, 0, 0, 0.5);
+	z-index: 1;
+}
+
 .modal {
 	flex-direction: column;
 	align-items: center;
 	width: 500px;
 	height: 360px;
-	background-color: white;
 	position: absolute;
 	left: 50%;
 	top: 50%;
 	margin-left: -250px;
 	margin-top: -180px;
 	color: white;
-	background: linear-gradient(#833d83, #5e2248);
-	border-radius: 20px;
+	border-radius: 10px;
+	background: #301129;
 	font-size: 20px;
+	z-index: 2;
 }
 
 .modal__header {
@@ -158,7 +170,7 @@ h3 {
 	max-width: 120px;
 	padding-right: 15px;
 	height: 40px;
-	background-color: black;
+	background-color: #301129;
 	color: white;
 	border-radius: 5px;
 	font-size: 24px;
@@ -197,11 +209,16 @@ h3 {
 	border-radius: 10px;
 }
 
+/* для JS слушателей */
+
 .none {
 	display: none;
 }
 
-/* для JS слушателей */
+.clicked {
+	background-color: white;
+	color: #742b66;
+}
 
 /* чтобы hover не работал на телефоне */
 @media (hover: hover) {
@@ -215,12 +232,24 @@ h3 {
 		color: white;
 	}
 
-	.modal__buttons button:hover {
-		background-color: rgb(102, 102, 253);
-	}
-
 	.input-container button:hover {
 		color: rgb(102, 102, 253);
+	}
+
+	.modal__buttons button:hover {
+		background-color: rgb(118, 118, 255);
+		color: white;
+	}
+
+	.modal_close-button svg:hover {
+		fill: rgb(118, 118, 255);
+		stroke: rgb(118, 118, 255);
+	}
+}
+
+@media (hover: none) {
+	.mobile_none {
+		display: none;
 	}
 }
 

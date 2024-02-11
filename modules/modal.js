@@ -1,7 +1,8 @@
 import { settingsModule } from './settings.js'
 
 const modalMadule = (function () {
-	const modalElem = document.querySelector('.modal')
+	const mainContainerElem = document.querySelector('.container')
+	const modalContainerElem = document.querySelector('.modal__container')
 
 	const crossCloseBtn = document.querySelector('.modal_close-button')
 
@@ -24,10 +25,45 @@ const modalMadule = (function () {
 
 	function init() {
 		crossCloseBtn.addEventListener('click', handleCloseBtn)
+		closeBtn.addEventListener('click', handleCloseBtn)
+
+		pomodoroIncrementBtn.addEventListener('click', handlePomodoroIncrementBtn)
+		pomodoroDecrementBtn.addEventListener('click', handlePomodoroDecrementBtn)
+
+		shortBreakIncrementBtn.addEventListener('click', handleShortBreakIncrementBtn)
+		shortBreakDecrementBtn.addEventListener('click', handleShortBreakDecrementBtn)
+
+		longBreakIncrementBtn.addEventListener('click', handleLongBreakIncrementBtn)
+		longBreakDecrementBtn.addEventListener('click', handleLongBreakDecrementBtn)
 	}
 
 	function handleCloseBtn() {
-		modalElem.classList.toggle('none')
+		modalContainerElem.classList.toggle('none')
+		mainContainerElem.removeAttribute('inert')
+	}
+
+	function handlePomodoroIncrementBtn() {
+		pomodoroInputElem.value = +pomodoroInputElem.value + 1
+	}
+
+	function handlePomodoroDecrementBtn() {
+		pomodoroInputElem.value = +pomodoroInputElem.value - 1
+	}
+
+	function handleShortBreakIncrementBtn() {
+		shortBreakInputElem.value = +shortBreakInputElem.value + 1
+	}
+
+	function handleShortBreakDecrementBtn() {
+		shortBreakInputElem.value = shortBreakInputElem.value - 1
+	}
+
+	function handleLongBreakIncrementBtn() {
+		longBreakInputElem.value = longBreakInputElem.value + 1
+	}
+
+	function handleLongBreakDecrementBtn() {
+		longBreakInputElem.value = longBreakInputElem.value - 1
 	}
 
 	return {
