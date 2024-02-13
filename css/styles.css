@@ -166,37 +166,13 @@ h3 {
 	position: relative;
 }
 
-.input-container input {
+.modal-input {
 	max-width: 120px;
-	padding-right: 15px;
 	height: 40px;
 	background-color: #301129;
 	color: white;
 	border-radius: 5px;
 	font-size: 24px;
-}
-
-.input-container button {
-	color: white;
-	border: none;
-	width: 20px;
-	height: 20px;
-	font-size: 10px;
-	border-radius: 5px;
-}
-
-.input-container__btn-increment,
-.input-container__btn-decrement {
-	position: absolute;
-	left: 99px;
-}
-
-.input-container__btn-increment {
-	top: 1px;
-}
-
-.input-container__btn-decrement {
-	bottom: 1px;
 }
 
 .modal__buttons {
@@ -232,10 +208,6 @@ h3 {
 		color: white;
 	}
 
-	.input-container button:hover {
-		color: rgb(102, 102, 253);
-	}
-
 	.modal__buttons button:hover {
 		background-color: rgb(118, 118, 255);
 		color: white;
@@ -244,12 +216,6 @@ h3 {
 	.modal_close-button svg:hover {
 		fill: rgb(118, 118, 255);
 		stroke: rgb(118, 118, 255);
-	}
-}
-
-@media (hover: none) {
-	.mobile_none {
-		display: none;
 	}
 }
 

@@ -1,7 +1,7 @@
 const settingsModule = (function () {
-	let pomodoroDuration = 1800
-	let shortBreakDuration = 300
-	let longBreakDuration = 600
+	let pomodoroDuration = 3000
+	let shortBreakDuration = 600
+	let longBreakDuration = 1200
 
 	function getPomodoroDuration() {
 		return pomodoroDuration
@@ -27,7 +27,13 @@ const settingsModule = (function () {
 		longBreakDuration = minutes
 	}
 
+	// Default Setters
 
+	function setDurationsToDefault() {
+		pomodoroDuration = 3000
+		shortBreakDuration = 600
+		longBreakDuration = 1200
+	}
 	return {
 		getPomodoroDuration,
 		setPomodoroDuration,
@@ -35,6 +41,7 @@ const settingsModule = (function () {
 		setShortBreakDuration,
 		getLongBreakDuration,
 		setLongBreakDuration,
+		setDurationsToDefault,
 	}
 })()
 

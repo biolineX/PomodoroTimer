@@ -5,7 +5,10 @@
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500&display=swap" rel="stylesheet" />
 		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, manimum-scale=1.0" />
+		<meta
+			name="viewport"
+			content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, manimum-scale=1.0"
+		/>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<link rel="stylesheet" href="css/normalize.css" />
 		<link rel="stylesheet" href="css/styles.css" />
@@ -22,7 +25,7 @@
 				</div>
 
 				<div class="wrapper__time">
-					<span class="time__timer">30:00</span>
+					<span class="time__timer">50:00</span>
 				</div>
 
 				<div class="wrapper__clock-actions">
@@ -61,37 +64,19 @@
 				<div class="modal__wrapper">
 					<div class="wrapper__pomodoro-settings">
 						<h2 class="pomodoro-settings__title">Pomodoro</h2>
-
-						<div class="pomodoro-settings input-container">
-							<input class="pomodoro-input " type="text" value="30" />
-							<button type="button" class="input-container__btn-increment pomodoro-increment mobile_none">▲</button>
-							<button type="button" class="input-container__btn-decrement pomodoro-decrement mobile_none">▼</button>
-						</div>
-
+						<input class="pomodoro-input modal-input" type="number" value="50" />
 						<h3>minutes</h3>
 					</div>
 
 					<div class="wrapper__short-break-settings">
 						<h2 class="short-break-settings__title">Short Break</h2>
-
-						<div class="short-break-settings input-container">
-							<input class="short-break-input" type="text" value="5" />
-							<button type="button" class="input-container__btn-increment short-break-increment mobile_none">▲</button>
-							<button type="button" class="input-container__btn-decrement short-break-decrement mobile_none">▼</button>
-						</div>
-
+						<input class="short-break-input modal-input" type="number" value="10" />
 						<h3>minutes</h3>
 					</div>
 
 					<div class="wrapper__long-break-settings">
 						<h2 class="long-break-settings__title">Long Break</h2>
-
-						<div class="long-break-settings input-container">
-							<input class="long-break-input" type="text" value="10" />
-							<button type="button" class="input-container__btn-increment long-break-increment mobile_none">▲</button>
-							<button type="button" class="input-container__btn-decrement long-break-decrement mobile_none" >▼</button>
-						</div>
-
+						<input class="long-break-input modal-input" type="number" value="20" />
 						<h3>minutes</h3>
 					</div>
 				</div>

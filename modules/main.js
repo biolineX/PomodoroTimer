@@ -89,7 +89,6 @@ const mainModule = (function () {
 		changeStyle(previousClickedBtn)
 		previousClickedBtn = btn
 		changeStyle(btn)
-		console.log('style changed')
 	}
 
 	function stopTimeAndResetDisplay(seconds) {

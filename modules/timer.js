@@ -6,7 +6,7 @@ const timerModule = (function () {
 
 	function startTimer(seconds) {
 		totalSeconds = seconds
-		timer = setInterval(updateTimer, 10)
+		timer = setInterval(updateTimer, 1000)
 	}
 
 	function stopTimer() {
